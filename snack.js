@@ -85,7 +85,7 @@ setTimeout(() =>{
 /* 🏆 Snack 6
 Crea un contatore automatico con setInterval
 Definisci una funzione creaContatoreAutomatico che accetta un intervallo di tempo e restituisce una funzione che avvia un setInterval, incrementando un contatore e stampandolo. */ 
-
+/*
 function creaContatoreAutomatico(intervallo){
 
 let contatore = 0
@@ -100,4 +100,31 @@ let contatore = 0
 }
 
 const start = creaContatoreAutomatico(1000)
+start()
+*/
+/*🏆 Snack 7
+Crea una funzione che ferma un timer dopo un certo tempo
+Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop. */
+
+function eseguiEferma(messaggio , tempoAvvio , tempoStop){
+
+
+   function avviaMessaggio(){
+    const id = setInterval(() =>{
+      console.log(messaggio)
+    },tempoAvvio)
+
+ 
+  
+    setTimeout(()=>{
+      clearInterval(id)
+      console.log("stop!")
+    },tempoStop)
+    
+ }
+    return avviaMessaggio
+  
+}
+
+const start = eseguiEferma("questo messaggio si stampa ogni secondo", 1000 , 5000)
 start()
