@@ -128,3 +128,41 @@ function eseguiEferma(messaggio , tempoAvvio , tempoStop){
 
 const start = eseguiEferma("questo messaggio si stampa ogni secondo", 1000 , 5000)
 start()
+
+/*🎯 Snack 8 (Bonus)
+Crea una funzione che simula un conto alla rovescia
+Scrivi una funzione contoAllaRovescia che accetta un numero n e stampa il conto alla rovescia da n a 0, con un intervallo di 1 secondo tra ogni numero. Quando arriva a 0, stampa "Tempo scaduto!" e interrompe il timer.
+Esempio di utilizzo:
+contoAllaRovescia(5)
+Output atteso:
+5
+4
+3
+2
+1
+Tempo scaduto!*/
+
+
+function contoAllaRovescia(valore){
+
+  let contatore = valore
+  
+  function starter(){
+  const id = setInterval(()=>{
+    contatore--
+    console.log(`conto alla rovescia! -${contatore}!`)
+  },1000)
+
+  setTimeout(()=>{
+    clearInterval(id)
+    console.log("Tempo scaduto!")
+  },5000)
+
+  }
+  return starter
+
+}
+
+const end = contoAllaRovescia(5)
+
+end()
