@@ -41,16 +41,18 @@ console.log(eseguiOperazione(1 , 2 , add))
 Crea un generatore di funzioni creaTimer
 Scrivi una funzione creaTimer che accetta un tempo (in ms) e restituisce una nuova funzione che avvia un setTimeout per stampare "Tempo scaduto!". */
 
-/*
-function creaTimer(){
+function creaTimer(tempo){
 
-  setTimeout( () =>{
-    console.log("time it's over")
-  }, 1000)
+  return function start(){
+    setTimeout(()=>{
+      console.log("tempo scaduto")
+    },tempo)
+  }
 
 }
 
-creaTimer()
+const timer = creaTimer(7000)
+timer()
 
 
 /*🏆 Snack 5
